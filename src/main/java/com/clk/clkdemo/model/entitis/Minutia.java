@@ -1,27 +1,27 @@
 package com.clk.clkdemo.model.entitis;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.annotation.Generated;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "minucja")
-public class Minucja {
+@Table(name = "minutia")
+public class Minutia {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String type;
     private String describe;
     private String colour;
 
-    public Minucja(Long id, String name, String type, String describe, String colour) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
-        this.describe = describe;
-        this.colour = colour;
-    }
+    @OneToMany(mappedBy = "minutia")
+    private List<Cordinates> cordinates;
 
-    public Minucja() {
+    public Minutia() {
     }
 
     public Long getId() {
@@ -62,5 +62,13 @@ public class Minucja {
 
     public void setColour(String colour) {
         this.colour = colour;
+    }
+
+    public List<Cordinates> getCordinates() {
+        return cordinates;
+    }
+
+    public void setCordinates(List<Cordinates> cordinates) {
+        this.cordinates = cordinates;
     }
 }
