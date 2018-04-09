@@ -1,10 +1,6 @@
 package com.clk.clkdemo.model.entitis;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "minutia")
@@ -12,23 +8,21 @@ public class Minutia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
+    private long id;
     private String name;
     private String type;
-    private String describe;
     private String colour;
-
-    @OneToMany(mappedBy = "minutia")
-    private List<Cordinates> cordinates;
+    private String text;
 
     public Minutia() {
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -48,14 +42,6 @@ public class Minutia {
         this.type = type;
     }
 
-    public String getDescribe() {
-        return describe;
-    }
-
-    public void setDescribe(String describe) {
-        this.describe = describe;
-    }
-
     public String getColour() {
         return colour;
     }
@@ -64,11 +50,11 @@ public class Minutia {
         this.colour = colour;
     }
 
-    public List<Cordinates> getCordinates() {
-        return cordinates;
+    public String getText() {
+        return text;
     }
 
-    public void setCordinates(List<Cordinates> cordinates) {
-        this.cordinates = cordinates;
+    public void setText(String text) {
+        this.text = text;
     }
 }

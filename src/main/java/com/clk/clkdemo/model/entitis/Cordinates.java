@@ -8,26 +8,24 @@ public class Cordinates {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
+    private long id;
     private int x;
     private int y;
     private int x1;
     private int y1;
 
-    @ManyToOne
-    @JoinColumn(name = "minutia_id")
+    @OneToOne
     private Minutia minutia;
-
 
     public Cordinates() {
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
