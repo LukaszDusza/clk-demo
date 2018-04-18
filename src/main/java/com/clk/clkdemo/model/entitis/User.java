@@ -1,6 +1,8 @@
 package com.clk.clkdemo.model.entitis;
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -8,11 +10,16 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private long id;
-    private String login;
+    private String name;
     private String password;
     private String rola;
-    private String creation_date;
+    private Date userSign;
+    private Date lastActivity;
+
+    @OneToMany
+    private List<Image> images;
 
     public User() {
     }
@@ -25,12 +32,12 @@ public class User {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getName() {
+        return name;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -49,11 +56,27 @@ public class User {
         this.rola = rola;
     }
 
-    public String getCreation_date() {
-        return creation_date;
+    public Date getUserSign() {
+        return userSign;
     }
 
-    public void setCreation_date(String creation_date) {
-        this.creation_date = creation_date;
+    public void setUserSign(Date userSign) {
+        this.userSign = userSign;
+    }
+
+    public Date getLastActivity() {
+        return lastActivity;
+    }
+
+    public void setLastActivity(Date lastActivity) {
+        this.lastActivity = lastActivity;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
     }
 }

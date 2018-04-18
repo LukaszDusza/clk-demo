@@ -8,12 +8,18 @@ public class Minutia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column(name = "minutia_id")
     private long id;
     private String name;
-    private String type;
-    private String colour;
-    private String text;
+    private String divId;
+    private String color;
+    private int posX;
+    private int posy;
+    private int posX1;
+    private int posy1;
+    private String description;
+    private int sectorOnDroped;
+    private int scoopeValue;
 
     public Minutia() {
     }
@@ -34,27 +40,75 @@ public class Minutia {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getDivId() {
+        return divId;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setDivId(String divId) {
+        this.divId = divId;
     }
 
-    public String getColour() {
-        return colour;
+    public String getColor() {
+        return color;
     }
 
-    public void setColour(String colour) {
-        this.colour = colour;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public String getText() {
-        return text;
+    public int getPosX() {
+        return posX;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    public int getPosy() {
+        return posy;
+    }
+
+    public void setPosy(int posy) {
+        this.posy = posy;
+    }
+
+    public int getPosX1() {
+        return posX1;
+    }
+
+    public void setPosX1(int posX1) {
+        this.posX1 = posX1;
+    }
+
+    public int getPosy1() {
+        return posy1;
+    }
+
+    public void setPosy1(int posy1) {
+        this.posy1 = posy1;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getSectorOnDroped() {
+        return sectorOnDroped;
+    }
+
+    public void setSectorOnDroped(int sectorOnDroped) {
+        this.sectorOnDroped = sectorOnDroped;
+    }
+
+    public int getScoopeValue() {
+        return scoopeValue;
+    }
+
+    public void setScoopeValue(int scoopeValue) {
+        this.scoopeValue = scoopeValue;
     }
 }
