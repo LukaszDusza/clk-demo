@@ -2,7 +2,7 @@ package com.clk.clkdemo.model.entitis;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "image")
@@ -17,8 +17,9 @@ public class Image {
     private Date createdUser;
     private Date lasModifiedDate;
 
-    @OneToMany
-    private List<Minutia> minutia;
+    @ManyToMany (cascade = CascadeType.ALL)
+    @JoinTable(name = "image_minutia", joinColumns = @JoinColumn(name = "image_id"), inverseJoinColumns = @JoinColumn(name = "minutia_id"))
+    private Set<Minutia> minutia;
 
     public Image() {
     }
@@ -63,11 +64,7 @@ public class Image {
         this.lasModifiedDate = lasModifiedDate;
     }
 
-    public List<Minutia> getMinutia() {
-        return minutia;
-    }
-
-    public void setMinutia(List<Minutia> minutia) {
+    public void setMinutia(Set<Minutia> minutia) {
         this.minutia = minutia;
     }
 
