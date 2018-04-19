@@ -79,4 +79,17 @@ public class User {
     public void setImages(List<Image> images) {
         this.images = images;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", rola='" + rola + '\'' +
+                ", userSign=" + userSign +
+                ", lastActivity=" + lastActivity +
+                ", images=" + images +
+                '}';
+    }
 }

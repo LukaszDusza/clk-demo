@@ -70,4 +70,16 @@ public class Image {
     public void setMinutia(List<Minutia> minutia) {
         this.minutia = minutia;
     }
+
+    @Override
+    public String toString() {
+        return "Image{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", creation_date='" + creation_date + '\'' +
+                ", createdUser=" + createdUser +
+                ", lasModifiedDate=" + lasModifiedDate +
+                ", minutia=" + minutia +
+                '}';
+    }
 }

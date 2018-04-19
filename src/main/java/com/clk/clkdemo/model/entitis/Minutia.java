@@ -111,4 +111,21 @@ public class Minutia {
     public void setScoopeValue(int scoopeValue) {
         this.scoopeValue = scoopeValue;
     }
+
+    @Override
+    public String toString() {
+        return "Minutia{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", divId='" + divId + '\'' +
+                ", color='" + color + '\'' +
+                ", posX=" + posX +
+                ", posy=" + posy +
+                ", posX1=" + posX1 +
+                ", posy1=" + posy1 +
+                ", description='" + description + '\'' +
+                ", sectorOnDroped=" + sectorOnDroped +
+                ", scoopeValue=" + scoopeValue +
+                '}';
+    }
 }
