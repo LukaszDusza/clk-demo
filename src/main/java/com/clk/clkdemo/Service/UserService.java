@@ -1,4 +1,4 @@
 package com.clk.clkdemo.Service;
 
-public class UserService {
+public interface UserService {
 }
