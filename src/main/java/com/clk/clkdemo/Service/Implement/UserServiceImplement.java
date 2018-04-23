@@ -1,4 +1,6 @@
 package com.clk.clkdemo.Service.Implement;
 
-public class UserServiceImplement {
+import com.clk.clkdemo.Service.UserService;
+
+public class UserServiceImplement implements UserService{
 }
