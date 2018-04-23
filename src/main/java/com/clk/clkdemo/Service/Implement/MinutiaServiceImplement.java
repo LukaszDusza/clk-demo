@@ -8,12 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class MinutiaServiceImplement implements MinutiaService {
 
     @Autowired
-    MinutiaRepository minutiaRepository
+    MinutiaRepository minutiaRepository;
 
     @Override
     public void saveMinutia(Minutia minutia) {
         minutiaRepository.save(minutia);
-
 
     }
 }
