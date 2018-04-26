@@ -1,12 +1,13 @@
 package com.clk.clkdemo.model.entitis;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = "image")
-public class Image {
+public class Image implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,10 +1,11 @@
 package com.clk.clkdemo.model.entitis;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "minutia")
-public class Minutia {
+public class Minutia implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
