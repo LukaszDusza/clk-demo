@@ -23,16 +23,21 @@ public class User implements Serializable{
     @JoinTable(name = "user_image", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "image_id"))
     private Set<Image> images;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
+
     public User() {
     }
 
-    public User(String name, String password, String rola, Date userSign, Date lastActivity, Set<Image> images) {
+    public User(String name, String password, String rola, Date userSign, Date lastActivity, Set<Image> images, Set<Role> roles) {
         this.name = name;
         this.password = password;
         this.rola = rola;
         this.userSign = userSign;
         this.lastActivity = lastActivity;
         this.images = images;
+        this.roles = roles;
     }
 
     public long getId() {
@@ -91,6 +96,14 @@ public class User implements Serializable{
         this.images = images;
     }
 
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -101,6 +114,7 @@ public class User implements Serializable{
                 ", userSign=" + userSign +
                 ", lastActivity=" + lastActivity +
                 ", images=" + images +
+                ", roles=" + roles +
                 '}';
     }
 }
