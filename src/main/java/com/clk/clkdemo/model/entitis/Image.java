@@ -25,6 +25,14 @@ public class Image implements Serializable{
     public Image() {
     }
 
+    public Image(String name, String creation_date, Date createdUser, Date lasModifiedDate, Set<Minutia> minutia) {
+        this.name = name;
+        this.creation_date = creation_date;
+        this.createdUser = createdUser;
+        this.lasModifiedDate = lasModifiedDate;
+        this.minutia = minutia;
+    }
+
     public long getId() {
         return id;
     }

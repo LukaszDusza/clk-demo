@@ -25,6 +25,19 @@ public class Minutia implements Serializable{
     public Minutia() {
     }
 
+    public Minutia(String name, String divId, String color, int posX, int posy, int posX1, int posy1, String description, int sectorOnDroped, int scoopeValue) {
+        this.name = name;
+        this.divId = divId;
+        this.color = color;
+        this.posX = posX;
+        this.posy = posy;
+        this.posX1 = posX1;
+        this.posy1 = posy1;
+        this.description = description;
+        this.sectorOnDroped = sectorOnDroped;
+        this.scoopeValue = scoopeValue;
+    }
+
     public long getId() {
         return id;
     }

@@ -26,6 +26,15 @@ public class User implements Serializable{
     public User() {
     }
 
+    public User(String name, String password, String rola, Date userSign, Date lastActivity, Set<Image> images) {
+        this.name = name;
+        this.password = password;
+        this.rola = rola;
+        this.userSign = userSign;
+        this.lastActivity = lastActivity;
+        this.images = images;
+    }
+
     public long getId() {
         return id;
     }
